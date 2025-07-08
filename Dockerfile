@@ -3,9 +3,18 @@ FROM python:3.9-slim
 # BlueOS Extension Metadata
 LABEL permissions='\
 {\
+    "ExposedPorts": {\
+        "8080/tcp": {}\
+    },\
     "HostConfig": {\
         "Privileged": true,\
-        "NetworkMode": "host",\
+        "PortBindings": {\
+            "8080/tcp": [\
+                {\
+                    "HostPort": ""\
+                }\
+            ]\
+        },\
         "Devices": [\
             {\
                 "PathOnHost": "/dev/bus/usb",\
