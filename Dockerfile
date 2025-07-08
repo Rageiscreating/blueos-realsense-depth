@@ -3,9 +3,6 @@ FROM python:3.9-slim
 # BlueOS Extension Metadata
 LABEL permissions='\
 {\
-    "ExposedPorts": {\
-        "8080/tcp": {}\
-    },\
     "HostConfig": {\
         "Privileged": true,\
         "NetworkMode": "host",\
