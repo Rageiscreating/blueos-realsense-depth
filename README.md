@@ -26,7 +26,7 @@ A comprehensive BlueOS extension for Intel RealSense depth cameras, providing re
 2. Navigate to **Extensions** → **Extensions Manager**
 3. Click **Add Extension** and enter the repository URL:
    ```
-   https://github.com/yourusername/blueos-realsense-depth
+   https://github.com/rageiscreating/blueos-realsense-depth
    ```
 4. Click **Install** and wait for the extension to be deployed
 
@@ -34,7 +34,7 @@ A comprehensive BlueOS extension for Intel RealSense depth cameras, providing re
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/blueos-realsense-depth.git
+   git clone https://github.com/rageiscreating/blueos-realsense-depth.git
    cd blueos-realsense-depth
    ```
 
@@ -56,7 +56,7 @@ A comprehensive BlueOS extension for Intel RealSense depth cameras, providing re
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/blueos-realsense-depth.git
+   git remote add origin https://github.com/rageiscreating/blueos-realsense-depth.git
    git push -u origin main
    ```
 
@@ -76,7 +76,7 @@ A comprehensive BlueOS extension for Intel RealSense depth cameras, providing re
 2. **Navigate to Extensions** → **Extensions Manager**
 3. **Click "Add Extension"** and enter:
    ```
-   https://github.com/yourusername/blueos-realsense-depth
+   https://github.com/rageiscreating/blueos-realsense-depth
    ```
 4. **Click Install** and wait for deployment
 
@@ -93,7 +93,7 @@ The extension is automatically built and published to GitHub Container Registry 
 - Push to main branch
 - Create a new release/tag
 
-**Docker Image**: `ghcr.io/yourusername/blueos-realsense-depth:latest`
+**Docker Image**: `ghcr.io/rageiscreating/blueos-realsense-depth:latest`
 
 ## Configuration
 
