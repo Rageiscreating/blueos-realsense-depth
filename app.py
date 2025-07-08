@@ -23,6 +23,21 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
+# BlueOS Extension Service Registration
+@app.route('/register_service', methods=['GET'])
+def register_service():
+    """Register this extension with BlueOS"""
+    return jsonify({
+        "name": "RealSense Depth Camera",
+        "description": "Intel RealSense depth camera integration with live video and depth data",
+        "icon": "mdi-camera-plus-outline",
+        "company": "Custom Extensions",
+        "version": "1.0.0",
+        "new_page": True,
+        "webpage": "/",
+        "api": "/api/"
+    })
+
 class RealSenseManager:
     def __init__(self):
         self.pipeline = None

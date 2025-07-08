@@ -1,5 +1,56 @@
 FROM python:3.9-slim
 
+# BlueOS Extension Metadata
+LABEL permissions='\
+{\
+    "ExposedPorts": {\
+        "8080/tcp": {}\
+    },\
+    "HostConfig": {\
+        "Privileged": true,\
+        "NetworkMode": "host",\
+        "Devices": [\
+            {\
+                "PathOnHost": "/dev/bus/usb",\
+                "PathInContainer": "/dev/bus/usb",\
+                "CgroupPermissions": "rwm"\
+            }\
+        ],\
+        "Binds": [\
+            "/run/udev:/run/udev:ro"\
+        ]\
+    }\
+}'
+
+LABEL authors='[\
+    {\
+        "name": "RealSense Extension Developer",\
+        "email": "developer@example.com"\
+    }\
+]'
+
+LABEL company='{\
+    "about": "Intel RealSense depth camera integration for BlueOS",\
+    "name": "Custom Extensions",\
+    "email": "support@example.com"\
+}'
+
+LABEL readme="https://raw.githubusercontent.com/yourusername/blueos-realsense-depth/main/README.md"
+
+LABEL links='{\
+    "website": "https://github.com/yourusername/blueos-realsense-depth",\
+    "github": "https://github.com/yourusername/blueos-realsense-depth",\
+    "support": "https://github.com/yourusername/blueos-realsense-depth/issues"\
+}'
+
+LABEL requirements='{\
+    "kernel_modules": ["uvcvideo"]\
+}'
+
+LABEL type="device-integration"
+LABEL tags='["camera", "depth", "realsense", "sensors", "positioning"]'
+LABEL version="1.0.0"
+
 # Install system dependencies including RealSense SDK
 RUN apt-get update && apt-get install -y \
     curl \
