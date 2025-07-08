@@ -8,8 +8,7 @@ Your BlueOS RealSense Depth Camera extension is now complete and ready for GitHu
 
 ```
 realsense_depth/
-├── manifest.json           # BlueOS extension manifest
-├── Dockerfile             # Container configuration
+├── Dockerfile             # Container configuration with BlueOS labels
 ├── docker-compose.yml     # Local testing configuration
 ├── app.py                 # Flask web application
 ├── depth_script.py        # Standalone camera testing
@@ -31,10 +30,10 @@ realsense_depth/
 ## 🎯 Key Features Implemented
 
 ### ✅ BlueOS Integration
-- **manifest.json**: Properly configured for BlueOS extension manager
+- **Docker labels**: Properly configured for BlueOS extension manager
 - **Privileged access**: Camera and USB device permissions
-- **Host networking**: Direct access to BlueOS network
-- **Port 8080**: Web interface accessible in BlueOS
+- **Port binding**: Port 8080 accessible in BlueOS
+- **ExposedPorts**: Proper container port configuration
 
 ### ✅ Web Interface
 - **Real-time video**: Live color camera feed

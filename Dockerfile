@@ -41,12 +41,12 @@ LABEL company='{\
     "email": "support@example.com"\
 }'
 
-LABEL readme="https://raw.githubusercontent.com/yourusername/blueos-realsense-depth/main/README.md"
+LABEL readme="https://raw.githubusercontent.com/Rageiscreating/blueos-realsense-depth/main/README.md"
 
 LABEL links='{\
-    "website": "https://github.com/yourusername/blueos-realsense-depth",\
-    "github": "https://github.com/yourusername/blueos-realsense-depth",\
-    "support": "https://github.com/yourusername/blueos-realsense-depth/issues"\
+    "website": "https://github.com/Rageiscreating/blueos-realsense-depth",\
+    "github": "https://github.com/Rageiscreating/blueos-realsense-depth",\
+    "support": "https://github.com/Rageiscreating/blueos-realsense-depth/issues"\
 }'
 
 LABEL requirements='{\
