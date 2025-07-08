@@ -1,0 +1,14 @@
+services:
+  realsense_depth:
+    build: .
+    privileged: true
+    network_mode: host
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    volumes:
+      - /dev:/dev
+      - /var/run/udev:/var/run/udev:ro
+    environment:
+      - UDEV=1
+      - DISPLAY=${DISPLAY}
+    restart: unless-stopped
