@@ -275,17 +275,35 @@ def depth_feed():
 def main():
     """Main function"""
     logger.info("Starting RealSense Depth Camera Extension")
-    
-    # Initialize camera
-    if camera_manager.initialize_camera():
-        camera_manager.start_streaming()
-        logger.info("Camera initialized and streaming started")
-    else:
-        logger.warning("Camera initialization failed - running in demo mode")
+    logger.info("BlueOS Extension for Intel RealSense cameras")
     
     try:
-        # Run Flask app
+        # Test RealSense library
+        logger.info("Testing RealSense library...")
+        ctx = rs.context()
+        devices = ctx.query_devices()
+        logger.info(f"Found {len(devices)} RealSense device(s)")
+        
+        # Initialize camera
+        if camera_manager.initialize_camera():
+            camera_manager.start_streaming()
+            logger.info("Camera initialized and streaming started")
+        else:
+            logger.warning("Camera initialization failed - running in demo mode")
+        
+        # Start Flask server
+        logger.info("Starting Flask server on 0.0.0.0:8080...")
         app.run(host='0.0.0.0', port=8080, debug=False, threaded=True)
+        
+    except Exception as e:
+        logger.error(f"Error during startup: {e}")
+        logger.info("Starting Flask server in fallback mode...")
+        # Still start the web interface even if camera fails
+        try:
+            app.run(host='0.0.0.0', port=8080, debug=False, threaded=True)
+        except Exception as flask_error:
+            logger.error(f"Failed to start Flask server: {flask_error}")
+            raise
     except KeyboardInterrupt:
         logger.info("Shutting down...")
     finally:

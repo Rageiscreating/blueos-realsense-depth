@@ -8,6 +8,7 @@ LABEL permissions='\
     },\
     "HostConfig": {\
         "Privileged": true,\
+        "ExtraHosts": ["host.docker.internal:host-gateway"],\
         "PortBindings": {\
             "8080/tcp": [\
                 {\
@@ -23,7 +24,8 @@ LABEL permissions='\
             }\
         ],\
         "Binds": [\
-            "/run/udev:/run/udev:ro"\
+            "/run/udev:/run/udev:ro",\
+            "/usr/blueos/extensions/realsense-data:/app/data"\
         ]\
     }\
 }'
@@ -55,7 +57,7 @@ LABEL requirements='{\
 
 LABEL type="device-integration"
 LABEL tags='["camera", "depth", "realsense", "sensors", "positioning"]'
-LABEL version="1.0.0"
+LABEL version="1.0.1"
 
 # Install system dependencies including RealSense SDK
 RUN apt-get update && apt-get install -y \
