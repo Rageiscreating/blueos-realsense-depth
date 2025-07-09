@@ -94,5 +94,8 @@ RUN mkdir -p /app/static /app/templates
 # Expose port
 EXPOSE 8080
 
+# Add BlueOS requirements
+LABEL requirements="core >= 1.1"
+
 # Run the application
-CMD ["python", "app.py"]
+ENTRYPOINT cd /app && python app.py
